@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Descrizione Corso</title>
+    <link rel="stylesheet" href="{% static 'core/style.css' %}">
+</head>
+<body>
+    <h1>Corso: {{nome_corso}}</h1>
+    {% if studenti > 0 %}
+        <p>Attualmente ci sono {{studenti}} iscritti</p>
+    {% else %}
+        <p>Le iscrizioni sono aperte</p>
+    {% endif %}
+
+    <br>
+    <p>Insegnante: {{docente}}</p> <br>
+    <p>Linguaggio: {{linguaggio}}</p>
+
+    <h2>Argomenti trattati:</h2>
+    <ul>
+        {% for argomento in argomenti %}
+            <li>{{argomento}}</li>
+        {% endfor %}
+    </ul>
+
+    <img src="{% static 'core/images/image_unsplash.jpg '%}" alt="immagine giappone" width="1000px">
+
+    <p>Vuoi unirti a noi?
+        <a href="{% url 'iscrizione'%}">Vai alla pagina di iscrizione</a> <!-- name della path -->
+    </p>
+
+
+</body>
+</html>

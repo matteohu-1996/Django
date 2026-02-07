@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Iscriviti</title>
+    <link rel="stylesheet" href="{% static 'core/style.css' %}">
+
+</head>
+<body>
+    <div class="container">
+
+    <form method="POST" class="form-iscrizione">
+        {% csrf_token %}    <!-- token criptato fatto da django -->
+    <h2>Unisciti alla nostra community</h2>
+
+    <div class="form-group">
+        <label for="username">Nome Utente:</label>
+        <input type="text" id="username" name="nome_form" placeholder="Scegli un nome">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Tua Email:</label>
+        <input type="email" id="email" name="email_form" placeholder="esempio@mail.it">
+    </div>
+
+    <div class="form-group checkbox-group">
+        <input type="checkbox" id="privacy" name="privacy" required>
+        <label for="privacy">Accetto i termini e le condizioni</label>
+    </div>
+
+    <button type="submit" class="btn-iscriviti">Iscriviti Ora</button>
+    </form>
+    </div>
+
+    <a href="{% url 'home'%}">Torna alla home</a>
+
+
+
+
+</body>
+</html>
