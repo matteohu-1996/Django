@@ -1,0 +1,22 @@
+Facciamo un backend per la gestione di corsi, professori e studenti universitari
+
+Abbiamo da registrare le seguenti entità:
+    - Professori: nome, cognome, data di nascita, settore <- non è necessaria la tabella settori
+    - Studenti: matricola, nome, cognome, data di nascita
+    - Corsi: codice, nome, crediti
+
+Dobbiamo anche gestire le seguenti relazioni:
+    - Solamente un professore insegna ad un corso [extra: ma ci sono diverse "versioni" del corso]
+    - Uno studente è iscritto a molti corsi, ogni corso accetta molti studenti
+    - Uno studente può dare l'esame di un corso e prendere un voto in /30 [extra]
+
+
+Requisiti da rispettare:
+    - Usiamo un DB Mysql con pymysql    [il db si chiama "db_universita"]
+    - Vogliamo un CRUD completo per Professori, Studenti e Corsi
+    - Quando chiedo la lista dei corsi, voglio un campo con "numero_iscritti"
+    - Deve essere permessa la ricerca di corsi per titolo, codice o cognome del docente
+    - Le variabili le mettiamo nel file .env
+    - Il progetto si chiama "universita" e l'app dell'api si chiama "api"
+
+
