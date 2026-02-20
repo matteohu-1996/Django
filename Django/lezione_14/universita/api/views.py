@@ -19,7 +19,7 @@ class StudenteViewSet(viewsets.ModelViewSet):
     search_fields = ['nome', "codice", "professore__cognome" ]
     ordering_fields = ['crediti', "nome"]
 
-    # URL: POST/api/v1/corsi({ID}/iscrivi
+    # URL: POST/api/v1/corsi({ID_corso}/iscrivi
     @action(methods=["POST"], detail=True)
     def iscrivi (self, request, pk=None):
         corso = self.get_object() # prendiamo il corso dal URL
